@@ -53,7 +53,7 @@ export {MenuHeroSelect} //Exports the choice from "MenuHeroSelect" to imports th
 
 // Import of the updated stats (based on the hero select) vv
 const {StatsCreateHeroStats} = await import('./Functions/FunctionsStats.js');
-const HeroStats = await StatsCreateHeroStats(MenuHeroSelect);
+let HeroStats = await StatsCreateHeroStats(MenuHeroSelect);
 //Function to easily show the current hero stats vv
 const {StatsShowHeroStats} = await import ('./Functions/FunctionsStats.js');
 
@@ -88,6 +88,7 @@ Como mais uma de suas aventuras, você entra na masmorra`)
 }
 
 //======Jogo Principal======//
+import { Explore } from './Functions/FunctionExplore.js';
 
 do{
     const MenuExplorationMenu = await select ({
@@ -113,6 +114,7 @@ do{
     switch (MenuExplorationMenu){
         case 1: 
             console.clear()
+            Explore()
             break;
         case 2:
             break;

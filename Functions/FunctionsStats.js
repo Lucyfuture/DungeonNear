@@ -1,26 +1,23 @@
 import { input } from "@inquirer/prompts";
 
 //Hero Stats Creation and Storage
+let HeroStats = {
+    name: "HeroStats",
+    Attributes: {
+        int: 0,
+        dex: 0,
+        atk: 0,
+        def: 0,
+        lk: 0
+    },
+    derived: {
+        Hp: 0,
+        maxHp: 0,
+        Mana: 0,
+        maxMana: 0
+    }
+};
 async function StatsCreateHeroStats(MenuHeroSelect) {
-
-    let HeroStats = {
-        name: "HeroStats",
-        Attributes: {
-            int: 0,
-            dex: 0,
-            atk: 0,
-            def: 0,
-            lk: 0
-        },
-        derived: {
-            Hp: 0,
-            maxHp: 0,
-            Mana: 0,
-            maxMana: 0
-        }
-    };
-
-
     switch (MenuHeroSelect) {
         case 1:
             const { Knight } = await import("../Resources/ClassesStats.js");
@@ -52,30 +49,31 @@ function StatsShowHeroStats (HeroStats) {
 }
 
 //=========Enemy Stats===========//
-function StatsEnemyStats (){
-    //Base stats
-    let EnemyStats = {
-        Attributes: {
-            int: 0,
-            dex: 0,
-            atk: 0,
-            def: 0,
-            lk: 0
-        },
-        derived: {
-            Hp: 0,
-            maxHp: 0,
-            Mana: 0,
-            maxMana: 0
-        }
+//Base stats
+let EnemyStats = {
+    Attributes: {
+        int: 0,
+        dex: 0,
+        atk: 0,
+        def: 0,
+        lk: 0
+    },
+    derived: {
+        Hp: 0,
+        maxHp: 0,
+        Mana: 0,
+        maxMana: 0
     }
+}
+function StatsCreateEnemyStats (){
     //Stats Randomizer
     EnemyStats.derived.maxHp = Math.ceil(Math.random() * 20)
     EnemyStats.derived.Hp = EnemyStats.derived.maxHp
     EnemyStats.Attributes.atk = Math.ceil(Math.random() * 20)
     EnemyStats.Attributes.def = Math.floor(Math.random() * 10)
+    return EnemyStats
 }
 
 //======Exportations======//
-export { StatsCreateHeroStats, StatsShowHeroStats, StatsEnemyStats};
+export { StatsCreateHeroStats, StatsShowHeroStats, StatsCreateEnemyStats, HeroStats, EnemyStats};
 
