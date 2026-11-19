@@ -114,7 +114,7 @@ do{
     switch (MenuExplorationMenu){
         case 1: 
             console.clear()
-            Explore()
+            await Explore()
             break;
         case 2:
             break;
