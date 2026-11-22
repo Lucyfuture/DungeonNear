@@ -67,7 +67,7 @@ let EnemyStats = {
 }
 function StatsCreateEnemyStats (){
     //Stats Randomizer
-    EnemyStats.derived.maxHp = Math.ceil(Math.random() * 20)
+    EnemyStats.derived.maxHp = Math.floor(Math.random() * (20 - 5 + 1) + 5)
     EnemyStats.derived.Hp = EnemyStats.derived.maxHp
     EnemyStats.Attributes.atk = Math.ceil(Math.random() * 20)
     EnemyStats.Attributes.def = Math.floor(Math.random() * 10)

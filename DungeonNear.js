@@ -28,24 +28,35 @@ import { select, input } from '@inquirer/prompts';
     }
 }
 
+
 //======Hero select======//
+import {Mage, Knight, Archer} from './Resources/ClassesStats.js'
 const MenuHeroSelect = await select ({  
     message: '=====Selecione Sua Classe=====',
     choices: [
         {
             name:'Cavaleiro',
             value: 1,
-            description: 'Um guerreiro com alto vigor e força de ataque, capaz de resistir a longas batalhas'
+            description: `Um guerreiro com alto vigor e força de ataque, capaz de resistir a longas batalhas
+Vida:${Knight.derived.Hp}
+Mana:${Knight.derived.Mana}
+Atributos: (atk:${Knight.Attributes.atk}, def:${Knight.Attributes.def}, int:${Knight.Attributes.int}, dex:${Knight.Attributes.dex} luck:${Knight.Attributes.lk})`
         },
         {
             name:'Mago',
             value: 2,
-            description: 'Um Mago capaz de manusear elementos e exterminar facilmente seus adversários'
+            description: `Um Mago capaz de manusear elementos e exterminar facilmente seus adversários
+Vida:${Mage.derived.Hp}
+Mana:${Mage.derived.Mana}
+Atributos: (atk:${Mage.Attributes.atk}, def:${Mage.Attributes.def}, int:${Mage.Attributes.int}, dex:${Mage.Attributes.dex} luck:${Mage.Attributes.lk})`
         },
         {
             name:'Arqueiro',
             value: 3,
-            description: 'Um Arqueiro ágil como o vento, atacando à distancia e esquivando facilmente dos ataques inimigos'
+            description: `Um Arqueiro ágil como o vento, atacando à distancia e esquivando facilmente dos ataques inimigos
+Vida:${Archer.derived.Hp}
+Mana:${Archer.derived.Mana}
+Atributos: (atk:${Archer.Attributes.atk}, def:${Archer.Attributes.def}, int:${Archer.Attributes.int}, dex:${Archer.Attributes.dex} luck:${Archer.Attributes.lk})`
         }
     ]
 })
@@ -88,7 +99,7 @@ Como mais uma de suas aventuras, você entra na masmorra`)
 }
 
 //======Jogo Principal======//
-import { Explore } from './Functions/FunctionExplore.js';
+import { Explore } from './Functions/ExploreFunctions/FunctionExplore.js';
 
 do{
     const MenuExplorationMenu = await select ({

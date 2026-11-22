@@ -1,4 +1,4 @@
-import { Battle } from "./ExploreFunctions/FunctionBattle.js"
+import { Battle } from "./FunctionBattle.js"
 
 async function Explore(){
     let Find = Math.ceil(Math.random() * 100)
