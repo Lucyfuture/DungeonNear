@@ -9,6 +9,7 @@ async function Battle(){
     console.clear()
     console.log("\x1b[3J");
     StatsCreateEnemyStats() 
+<<<<<<< HEAD
     do{
       console.log(`
                        "====Esqueleto mutante===="
@@ -18,6 +19,16 @@ async function Battle(){
       .n                   .                 .                  n.
 .   .dP                  dP                   9b                 9b.    .
 4    qXb         .       dX                     Xb       .        dXp     t
+=======
+        console.log(`
+            
+                    HP Heroi: ${HeroStats.derived.Hp}/${HeroStats.derived.maxHp} | HP Inimigo: ${EnemyStats.derived.Hp}/${EnemyStats.derived.maxHp}
+                   
+          .                                                      .
+        .n                   .                 .                  n.
+  .   .dP                  dP                   9b                 9b.    .
+ 4    qXb         .       dX                     Xb       .        dXp     t
+>>>>>>> 218cd8a116bb728ac947b6f1ffee2339458326ef
 dX.    9Xb      .dXb    __                         __    dXb.     dXP     .Xb
 9XXb._       _.dXXXXb dXXXXbo.                 .odXXXXb dXXXXb._       _.dXXP
 9XXXXXXXXXXXXXXXXXXXVXXXXXXXXOo.           .oOXXXXXXXXVXXXXXXXXXXXXXXXXXXXP
