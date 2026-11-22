@@ -6,7 +6,8 @@ async function Battle(){
     console.clear()
     const continuar = await input ({message: 'Você encontrou um Inimigo!'})
     console.clear()
-    StatsCreateEnemyStats
+    console.log("\x1b[3J");
+    StatsCreateEnemyStats() 
         console.log(`
             
                     HP Heroi: ${HeroStats.derived.Hp}/${HeroStats.derived.maxHp} | HP Inimigo: ${EnemyStats.derived.Hp}/${EnemyStats.derived.maxHp}
